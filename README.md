@@ -5,7 +5,7 @@ Mi Band 2 connection demo.
 
 You need to install:
 
-* **node 10+**
+* **node 8**
 * **yarn**
 
 ## Run
