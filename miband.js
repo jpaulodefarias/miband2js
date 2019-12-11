@@ -16,13 +16,13 @@ class MiBand {
             const battery = ps.characteristics.find(c => c.uuid === UUID_BASE('0006'))
             battery.read((error, data) => {
                 const res = Buffer.from(data)
-                console.log('battery: ', `${res.readUInt8(0)}%`);
+                console.log('battery: ', `${res.readUInt8(0)}%`)
             })
 
             // const steps = ps.characteristics.find(c => c.uuid === UUID_BASE('0007'))
             // steps.read((error, data) => {
             //     const res = Buffer.from(data)
-            //     console.log('steps: ', res.toString());
+            //     console.log('steps: ', res.toString())
             // })
 
             // console.log(this.info)

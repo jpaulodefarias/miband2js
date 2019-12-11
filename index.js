@@ -19,7 +19,7 @@ noble.on('discover', peripheral => {
     console.log(`${peripheral.address} ${peripheral.advertisement.localName}`)
 
     peripheral.connect(error => {
-        console.log('connected to peripheral: ' + peripheral.uuid);
+        console.log('connected to peripheral: ' + peripheral.uuid)
 
         const miband = new MiBand(peripheral)
         // console.log(miband.getInfo());
