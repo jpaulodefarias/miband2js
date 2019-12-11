@@ -1,5 +1,5 @@
 const noble = require('noble')
-const SERVICE_UUID = "fee0"
+const SERVICE_UUID = 'fee0'
 
 noble.on('stateChange', state => {
     console.log(state)
