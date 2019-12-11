@@ -8,6 +8,10 @@ You need to install:
 * **node 8**
 * **yarn**
 
+## Install dependencies
+
+* **yarn install**
+
 ## Run
 
 * **yarn start**
