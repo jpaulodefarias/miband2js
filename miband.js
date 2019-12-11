@@ -11,7 +11,7 @@ class MiBand {
         this.device.discoverAllServicesAndCharacteristics((error, services, characteristics) => {
 
             const ps = services.find(s => s.uuid === UUID_PRIMARY_SERVICE)
-            // console.log(ps);
+            // console.log(ps)
 
             const battery = ps.characteristics.find(c => c.uuid === UUID_BASE('0006'))
             battery.read((error, data) => {

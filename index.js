@@ -22,11 +22,11 @@ noble.on('discover', peripheral => {
         console.log('connected to peripheral: ' + peripheral.uuid)
 
         const miband = new MiBand(peripheral)
-        // console.log(miband.getInfo());
+        // console.log(miband.getInfo())
         miband.getInfo()
 
         // peripheral.disconnect(error => {
-        //     console.log('disconnected from peripheral: ' + peripheral.uuid);
-        // });
+        //     console.log('disconnected from peripheral: ' + peripheral.uuid)
+        // })
     })
-});
+})
