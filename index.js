@@ -1,5 +1,6 @@
 const noble = require('noble')
 const SERVICE_UUID = 'fee0'
+const MiBand = require('./miband')
 
 noble.on('stateChange', state => {
     console.log(state)
@@ -20,15 +21,9 @@ noble.on('discover', peripheral => {
     peripheral.connect(error => {
         console.log('connected to peripheral: ' + peripheral.uuid);
 
-        peripheral.discoverAllServicesAndCharacteristics((error, services, characteristics) => {
-            for (const s of services) {
-                console.log(`service: ${s}`);
-            }
-
-            for (const c of characteristics) {
-                console.log(`characteristic: ${c}`);
-            }
-        })
+        const miband = new MiBand(peripheral)
+        // console.log(miband.getInfo());
+        miband.getInfo()
 
         // peripheral.disconnect(error => {
         //     console.log('disconnected from peripheral: ' + peripheral.uuid);
