@@ -18,6 +18,10 @@ noble.on('discover', peripheral => {
     // console.log(`${peripheral}`)
     console.log(`${peripheral.address} ${peripheral.advertisement.localName}`)
 
+    if (!(peripheral.advertisement.localName === 'MI Band 2')) {
+        return
+    }
+
     peripheral.connect(error => {
         console.log('connected to peripheral: ' + peripheral.uuid)
 
