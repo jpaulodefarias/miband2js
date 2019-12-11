@@ -16,4 +16,22 @@ noble.on('stateChange', state => {
 noble.on('discover', peripheral => {
     // console.log(`${peripheral}`)
     console.log(`${peripheral.address} ${peripheral.advertisement.localName}`)
+
+    peripheral.connect(error => {
+        console.log('connected to peripheral: ' + peripheral.uuid);
+
+        peripheral.discoverAllServicesAndCharacteristics((error, services, characteristics) => {
+            for (const s of services) {
+                console.log(`service: ${s}`);
+            }
+
+            for (const c of characteristics) {
+                console.log(`characteristic: ${c}`);
+            }
+        })
+
+        // peripheral.disconnect(error => {
+        //     console.log('disconnected from peripheral: ' + peripheral.uuid);
+        // });
+    })
 });
